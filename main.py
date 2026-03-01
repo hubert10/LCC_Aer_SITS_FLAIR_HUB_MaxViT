@@ -303,3 +303,7 @@ if __name__ == "__main__":
 
 
 # Experiment: UPERFUSE where SWIN is replaced by MaxViT network
+
+# We need to run an experiment with the configs of the baselines
+
+# regarding the channels order
