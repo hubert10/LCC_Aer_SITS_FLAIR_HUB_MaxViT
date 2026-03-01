@@ -12,7 +12,7 @@
 
 paths :   
     out_folder: "/my_data/Results/LCC_Aer_SITS_FLAIR_HUB_MaxViT/results/"
-    out_model_name: "maxvit-convformer-seg"
+    out_model_name: "seg"
 
     train_csv: /my_data/FLAIR_HUB/ALL_CSV/FLAIR_HUB_TRAIN.csv
     val_csv: /my_data/FLAIR_HUB/ALL_CSV/FLAIR_HUB_VALID.csv
@@ -27,7 +27,7 @@ tasks:
         init_weights_only_from_ckpt: False
         resume_training_from_ckpt: False
 
-    predict: True
+    predict: False
     write_files: True
     georeferencing_output: True
     metrics_only: False
