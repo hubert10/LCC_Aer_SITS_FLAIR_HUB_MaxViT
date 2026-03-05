@@ -18,7 +18,7 @@ paths :
     val_csv: /my_data/FLAIR_HUB/ALL_CSV/FLAIR_HUB_VALID.csv
     test_csv: /my_data/FLAIR_HUB/ALL_CSV/FLAIR_HUB_TEST.csv
     global_mtd_folder: /my_data/FLAIR_HUB/GLOBAL_ALL_MTD/
-    ckpt_model_path: "/my_data/Results/LCC_Aer_SITS_FLAIR_HUB/results/test-lib/checkpoints/"
+    ckpt_model_path: "/my_data/Results/LCC_Aer_SITS_FLAIR_HUB_MaxViT/results/test-lib/checkpoints/"
 
 
 tasks: 
