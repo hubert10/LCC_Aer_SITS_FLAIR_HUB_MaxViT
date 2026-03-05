@@ -10,12 +10,12 @@ paths :
 
 
 tasks: 
-    train: False
+    train: True
     train_tasks: 
         init_weights_only_from_ckpt: False
         resume_training_from_ckpt: False
 
-    predict: True
+    predict: False
     write_files: True
     georeferencing_output: True
     metrics_only: False
