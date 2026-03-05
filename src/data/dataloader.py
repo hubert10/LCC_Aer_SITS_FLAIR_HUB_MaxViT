@@ -65,10 +65,6 @@ class FLAIRDataSet(Dataset):
         self.list_patch = {}
         enabled = self.config["modalities"]["inputs"]
         for mod, enabled_flag in enabled.items():
-            print("mod:", mod)
-            print("enabled_flag:", enabled_flag)
-            print("dict_paths:", dict_paths)
-
             if enabled_flag and mod in dict_paths:
                 self.list_patch[mod] = np.array(dict_paths[mod])
                 if mod == "SENTINEL2_TS":
