@@ -270,13 +270,7 @@ def main(config):
         pred_msk = os.path.join(
             out_dir, "predictions" + "_" + config["paths"]["out_model_name"]
         )
-        # mIou, ious = generate_miou(config, truth_msk, pred_msk)
-        # mf1, f1s, oa = generate_mf1s(truth_msk, pred_msk)
 
-        # print_iou_metrics(mIou, ious)
-        # print_f1_metrics(mf1, f1s)
-        # print_overall_accuracy(oa)
-        
         output_dir=os.path.join(
                 out_dir, "predictions" + "_" + config["paths"]["out_model_name"]
             )
