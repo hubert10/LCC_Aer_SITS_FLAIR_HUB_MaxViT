@@ -51,27 +51,27 @@ class SITSAerialSegmenter(nn.Module):
             num_classes=self.num_classes,
         )
 
-        # Get first conv layer (usually called 'stem.conv' in MaxViT)
-        conv1 = self.aerial_net_encoder.stem.conv1  # <-- sometimes it's model.stem.conv or model.conv_stem, check print(model)
+        # # Get first conv layer (usually called 'stem.conv' in MaxViT)
+        # conv1 = self.aerial_net_encoder.stem.conv1  # <-- sometimes it's model.stem.conv or model.conv_stem, check print(model)
 
-        # Create new conv with 5 input channels instead of 3
-        new_conv = create_conv2d(
-            in_channels=config["inputs"]["num_channels_aer"],  # Use num_channels from config
-            out_channels=conv1.out_channels,
-            kernel_size=conv1.kernel_size,
-            stride=conv1.stride,
-            padding=1, # original padding was None, but we set it to 1 for compatibility
-            bias=conv1.bias is not None
-        )
+        # # Create new conv with 5 input channels instead of 3
+        # new_conv = create_conv2d(
+        #     in_channels=config["inputs"]["num_channels_aer"],  # Use num_channels from config
+        #     out_channels=conv1.out_channels,
+        #     kernel_size=conv1.kernel_size,
+        #     stride=conv1.stride,
+        #     padding=1, # original padding was None, but we set it to 1 for compatibility
+        #     bias=conv1.bias is not None
+        # )
 
-        # Initialize the first 3 channels with pretrained weights
-        with torch.no_grad():
-            new_conv.weight[:, :3, :, :] = conv1.weight  # copy RGB weights
-            # Initialize the extra channels randomly (e.g., Kaiming normal)
-            nn.init.kaiming_normal_(new_conv.weight[:, 3:, :, :])
+        # # Initialize the first 3 channels with pretrained weights
+        # with torch.no_grad():
+        #     new_conv.weight[:, :3, :, :] = conv1.weight  # copy RGB weights
+        #     # Initialize the extra channels randomly (e.g., Kaiming normal)
+        #     nn.init.kaiming_normal_(new_conv.weight[:, 3:, :, :])
 
-        # Replace the old conv with the new one
-        self.aerial_net_encoder.stem.conv1 = new_conv
+        # # Replace the old conv with the new one
+        # self.aerial_net_encoder.stem.conv1 = new_conv
 
         encoder_channels = [
             self.embed_dim,

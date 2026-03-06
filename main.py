@@ -295,9 +295,57 @@ if __name__ == "__main__":
     main(config)
 
 
-
-# Experiment: UPERFUSE where SWIN is replaced by MaxViT network
+# Experiment: UPERFUSE where SWIN is replaced by MaxViT network and the UperNet is replaced by UNet decoder
 
 # We need to run an experiment with the configs of the baselines
 
+# EXP-1: Testing the configs of LC-L modified by us
+
 # regarding the channels order
+
+# /home/eouser/flair_venv/lib/python3.10/site-packages/rasterio/__init__.py:304: NotGeoreferencedWarning: Dataset has no geotransform, gcps, or rpcs. The identity matrix will be returned.
+#   dataset = DatasetReader(path, driver=driver, sharing=sharing, **kwargs)
+# Metrics: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 50700/50700 [16:12<00:00, 52.14img/s]
+
+# Task: AERIAL_LABEL-COSIA - Global Metrics:
+# ------------------------------------------------------------------------------------------------------------------------------------------------------
+# mIoU                 63.45
+# Overall Accuracy     77.30
+# F-score              76.18
+# Precision            77.68
+# Recall               75.22
+# ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Idx    Class                     IoU        F-score    Precision  Recall     w.TASK          w.AERIAL_RGBI   w.DEM_ELEV      w.SPOT_RGBI     w.SENTINEL2_TS
+# ------------------------------------------------------------------------------------------------------------------------------------------------------
+# 0      building                  84.48      91.59      93.01      90.21      1               1               1               1               1
+# 1      greenhouse                78.25      87.80      86.02      89.65      1               1               1               1               1
+# 2      swimming_pool             63.20      77.45      79.35      75.65      1               1               1               1               1
+# 3      impervious surface        76.05      86.40      85.69      87.11      1               1               1               1               1
+# 4      pervious surface          56.20      71.96      71.43      72.51      1               1               1               1               1
+# 5      bare soil                 62.49      76.91      76.16      77.68      1               1               1               1               1
+# 6      water                     89.27      94.33      93.25      95.44      1               1               1               1               1
+# 7      snow                      62.54      76.96      96.01      64.21      1               1               1               1               1
+# 8      herbaceous vegetation     54.38      70.45      72.21      68.78      1               1               1               1               1
+# 9      agricultural land         55.47      71.36      67.77      75.34      1               1               1               1               1
+# 10     plowed land               29.02      44.98      47.87      42.42      1               1               1               1               1
+# 11     vineyard                  75.57      86.09      87.27      84.93      1               1               1               1               1
+# 12     deciduous                 72.76      84.23      82.81      85.71      1               1               1               1               1
+# 13     coniferous                63.24      77.48      78.39      76.59      1               1               1               1               1
+# 14     brushwood                 28.86      44.79      47.94      42.02      1               1               1               1               1
+
+
+# 0-weighted classes for task
+# -----------------------------------
+# 15     clear cut
+# 16     ligneous
+# 17     mixed
+# 18     undefined
+
+
+# --  [FINISHED.]  --
+# output dir : /my_data/Results/LCC_Aer_SITS_FLAIR_HUB_MaxViT/results/seg
+# eouser@hubert:~/exp_2026/LCC_Aer_SITS_FLAIR_HUB_MaxViT$
+
+
+# EXP-2: Testing the configs of LC-L modified by us

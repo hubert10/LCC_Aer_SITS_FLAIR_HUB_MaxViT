@@ -6,10 +6,15 @@ modalities:
         SPOT_RGBI         : True
         SENTINEL2_TS      : True 
         
+    # inputs_channels: # starts at 1
+    #     AERIAL_RGBI       : [1,2,3,4] 
+    #     SPOT_RGBI         : [1,2,3,4]
+    #     SENTINEL2_TS      : [1,2,3,6] # [1,2,3,4,5,6,7,8,9,10]
+
     inputs_channels: # starts at 1
-        AERIAL_RGBI       : [1,2,3,4] 
-        SPOT_RGBI         : [1,2,3,4]
-        SENTINEL2_TS      : [1,2,3,6] # [1,2,3,4,5,6,7,8,9,10]
+        AERIAL_RGBI       : [4,1,2] 
+        SPOT_RGBI         : [4,1,2]
+        SENTINEL2_TS      : [1,2,3,4,5,6,7,8,9,10]
 
     aux_loss: 
         AERIAL_RGBI       : False
@@ -41,11 +46,18 @@ modalities:
     normalization: 
         norm_type : custom   # [custom / scaling / without]
 
-        AERIAL_RGBI_means : [105.66, 111.35, 102.18, 106.59]  
-        AERIAL_RGBI_stds  : [52.23, 45.62, 44.30, 39.78]
+        # AERIAL_RGBI_means : [105.66, 111.35, 102.18, 106.59]  
+        # AERIAL_RGBI_stds  : [52.23, 45.62, 44.30, 39.78]
 
-        SPOT_RGBI_means : [433.26, 508.75, 467.77, 1137.03]
-        SPOT_RGBI_stds  : [312.76, 284.61, 226.02, 543.11]
+        AERIAL_RGBI_means : [106.59, 105.66, 111.35]  
+        AERIAL_RGBI_stds  : [39.78, 52.23, 45.62]
+
+
+        # SPOT_RGBI_means : [433.26, 508.75, 467.77, 1137.03]
+        # SPOT_RGBI_stds  : [312.76, 284.61, 226.02, 543.11]
+
+        SPOT_RGBI_means : [1137.03, 433.26, 508.75]
+        SPOT_RGBI_stds  : [543.11, 312.76, 284.61]
 
         DEM_ELEV_means : [311.06, 311.06] # use same for both DSM/DTM to allow keeping differences of elevation
         DEM_ELEV_stds  : [537.55, 537.55] # use same for both DSM/DTM to allow keeping differences of elevation
