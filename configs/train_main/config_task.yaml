@@ -25,7 +25,7 @@ inputs:
     img_size: 10
     num_classes: 19
     num_channels_aer: 3 # 5 
-    num_channels_sat: 3 #4 
+    num_channels_sat: 10 #4 
     ref_date: '05-15'
     nbts: 1 # 1: 12 images, 2: 6 images, 3: 4 images, 4: 3 images, 6: 2 images
     sat_reflectance_train: 2_000 

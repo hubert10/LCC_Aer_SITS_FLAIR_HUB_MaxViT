@@ -324,7 +324,10 @@ class FLAIRDataSet(Dataset):
         batch = {rename_map.get(k, k): v for k, v in batch.items()}
         # we use the positional encoding of the dates as proposed in the paper
         # create a new dict with renamed keys
-        img = self.combine_hr_and_dem(batch["patch"], batch["dem_elev"])
+        if self.config["inputs"]["num_channels_aer"] != 3:
+            img = self.combine_hr_and_dem(batch["patch"], batch["dem_elev"])
+        else:
+            img = batch["patch"]
 
         # torch.Size([2, 3, 40, 40]): T=2, C=3, H=40, W=40
         ind = np.argmin(np.abs(batch["dates"]))
