@@ -349,3 +349,45 @@ if __name__ == "__main__":
 
 
 # EXP-2: Testing the configs of LC-L modified by us
+
+
+
+# Task: AERIAL_LABEL-COSIA - Global Metrics:
+# ------------------------------------------------------------------------------------------------------------------------------------------------------
+# mIoU                 63.40
+# Overall Accuracy     76.83
+# F-score              76.25
+# Precision            77.29
+# Recall               75.69
+# ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Idx    Class                     IoU        F-score    Precision  Recall     w.TASK          w.AERIAL_RGBI   w.DEM_ELEV      w.SPOT_RGBI     w.SENTINEL2_TS
+# ------------------------------------------------------------------------------------------------------------------------------------------------------
+# 0      building                  85.16      91.99      92.35      91.62      1               1               1               1               1
+# 1      greenhouse                78.37      87.87      85.20      90.71      1               1               1               1               1
+# 2      swimming_pool             63.65      77.79      79.40      76.23      1               1               1               1               1
+# 3      impervious surface        76.15      86.46      87.40      85.54      1               1               1               1               1
+# 4      pervious surface          56.95      72.57      70.33      74.96      1               1               1               1               1
+# 5      bare soil                 62.18      76.68      74.95      78.49      1               1               1               1               1
+# 6      water                     87.52      93.34      90.76      96.08      1               1               1               1               1
+# 7      snow                      71.29      83.24      97.17      72.80      1               1               1               1               1
+# 8      herbaceous vegetation     52.62      68.95      71.84      66.28      1               1               1               1               1
+# 9      agricultural land         53.60      69.79      64.87      75.52      1               1               1               1               1
+# 10     plowed land               30.49      46.73      44.87      48.77      1               1               1               1               1
+# 11     vineyard                  65.61      79.24      87.02      72.73      1               1               1               1               1
+# 12     deciduous                 72.96      84.36      83.34      85.41      1               1               1               1               1
+# 13     coniferous                63.99      78.04      80.11      76.08      1               1               1               1               1
+# 14     brushwood                 30.49      46.73      49.71      44.08      1               1               1               1               1
+
+
+# 0-weighted classes for task
+# -----------------------------------
+# 15     clear cut
+# 16     ligneous
+# 17     mixed
+# 18     undefined
+
+
+# --  [FINISHED.]  --
+# output dir : /my_data/Results/LCC_Aer_SITS_FLAIR_HUB_MaxViT/results/seg
+# eouser@hubert:~/exp_2026/LCC_Aer_SITS_FLAIR_HUB_MaxViT$
