@@ -10,12 +10,12 @@ paths :
 
 
 tasks: 
-    train: True
+    train: False
     train_tasks: 
         init_weights_only_from_ckpt: False
         resume_training_from_ckpt: False
 
-    predict: False
+    predict: True
     write_files: True
     georeferencing_output: True
     metrics_only: False
@@ -73,7 +73,7 @@ saving:
     progress_rate: 100
     ckpt_verbose: True
     verbose_config: False
-    mode: "train" # [train", "eval"]
+    mode: "eval" # [train", "eval"]
     resume: False
 
 
